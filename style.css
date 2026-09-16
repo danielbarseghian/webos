@@ -1,0 +1,43 @@
+body {
+    font-family: Inter, sans-serif;
+    background-image: url(./static/beach.jpeg);
+    background-size: cover;
+}
+
+#italic {
+    color: gray;
+    font-style: italic;
+}
+
+#image {
+    width: 250px;
+    height: 250px;
+}
+
+.box {
+    position: absolute;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+.liquid-glass {
+    /* found code online for liquide glass */
+    
+    background-color: rgba(255, 255, 255, 0.12);
+    
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    
+    backdrop-filter: blur(16px) url(#liquid-refraction);
+    -webkit-backdrop-filter: blur(16px) url(#liquid-refraction);
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25),
+                inset 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.center {
+    text-align: center;
+}
+
+.round-corner {
+    border-radius: 25px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="./style.css">
+
+            <!-- connect for iter font-->
+            <link rel="preconnect" href="https://rsms.me/">
+            <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        </head>
+
+        <!-- found this for liquid glass -->
+        <svg style="position: absolute; width: 0; height: 0; pointer-events: none;">
+            <filter id="liquid-refraction">
+                <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+        </svg>
+
+        <body>
+            <div style="display: flex;" class="liquide-glass">
+                <p>
+                    SeaOS
+                </p> 
+                <p>
+                    6/21/2023 3:41 PM
+                </p>
+            </div>
+
+            <h1 class="center">Welcome to my OS</h1>
+            <div class="box liquide-glass">
+                <h2>Introduction</h2>
+                <p>Im a programmer. I love low level programming like C or rust (that im currently learning, <a href="https://stardance.hackclub.com/projects/55195">you can check it out here</a>) !</p>
+            </div>
+            <br>
+            <div class="box liquide-glass" style="top: 37%; left: 40%;">
+                <h2>Random Fact</h2>
+                <p>Some time ago i used to wake up around 4 am and thinking i had to go to school i'l prepare (eat food things) and then after realise its 4am...</p>
+                <center><img class="round-corner" id="image" src="./static/average when there is school.jpeg" /> </center>
+                <p class="center" id="italic">*actual photo of me waking up at 3am</p>
+            </div>
+        </body>
+    </html>
