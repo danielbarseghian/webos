@@ -1,3 +1,7 @@
+var welcomeScreen = document.querySelector("#window");
+var welcomeScreenClose = document.querySelector("#welcomeclose");
+var welcomeScreenOpen = document.querySelector("#welcomeopen");
+
 function updateTime() {
         var currentTime = new Date().toLocaleString();
         var timeText = document.querySelector("#timeElement");
@@ -30,6 +34,11 @@ function dragElement(element) {
     // Step 6: Define the `startDragging` function to capture the initial mouse position and set up event listeners.
     function startDragging(e) {
         e = e || window.event;
+
+        // had a bug, needed to ignore it
+        if (e.target.id === "welcomeclose") {
+            return;
+        }
         e.preventDefault();
         // Step 7: Get the mouse cursor position at startup.
         initialX = e.clientX;
@@ -59,3 +68,19 @@ function dragElement(element) {
         document.onmousemove = null;
     }
 }
+
+function closeWindow(element) {
+  element.style.display = "none"
+}
+
+function openWindow(element) {
+  element.style.display = ""
+}
+
+welcomeScreenClose.addEventListener("click", function() {
+  closeWindow(welcomeScreen);
+});
+
+welcomeScreenOpen.addEventListener("click", function() {
+  openWindow(welcomeScreen);
+});
