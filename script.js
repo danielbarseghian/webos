@@ -8,12 +8,12 @@ function updateTime() {
   timeText.innerHTML = currentTime;
 }
 
-function SelectIcon(element) {
+function selectIcon(element) {
   element.classList.add("selected");
   selectedIcon = element
 } 
 
-function DeselectIcon(element) {
+function deselectIcon(element) {
   element.classList.remove("selected");
   selectedIcon = element
 } 
@@ -97,3 +97,15 @@ closeButtons.forEach(function(button) {
 function closeWindow(element) {
   element.style.display = "none";
 }
+
+function openWindow(element) {
+  element.style.display = "block";
+}
+
+var notesIcon = document.querySelector("#notesIcon");
+var notesWindow = document.querySelector("#notesWindow");
+
+notesIcon.addEventListener("click", function() {
+  openWindow(notesWindow);
+});
+
