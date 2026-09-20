@@ -8,12 +8,12 @@ function updateTime() {
   timeText.innerHTML = currentTime;
 }
 
-function selectIcon(element) {
+function SelectIcon(element) {
   element.classList.add("selected");
   selectedIcon = element
 } 
 
-function deselectIcon(element) {
+function DeselectIcon(element) {
   element.classList.remove("selected");
   selectedIcon = element
 } 
@@ -96,22 +96,4 @@ closeButtons.forEach(function(button) {
 
 function closeWindow(element) {
   element.style.display = "none";
-}
-
-function openWindow(element) {
-  element.style.display = "flex";
-  biggestIndex++;  // Increment biggestIndex by 1
-  element.style.zIndex = biggestIndex;
-}
-
-var notesIcon = document.querySelector("#notesIcon");
-var notesWindow = document.querySelector("#notesWindow");
-
-notesIcon.addEventListener("click", function() {
-  openWindow(notesWindow);
-});
-
-function handleWindowTap(element) {
-  biggestIndex++;  // Increment biggestIndex by 1
-  element.style.zIndex = biggestIndex;
 }
