@@ -99,7 +99,9 @@ function closeWindow(element) {
 }
 
 function openWindow(element) {
-  element.style.display = "block";
+  element.style.display = "flex";
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
 }
 
 var notesIcon = document.querySelector("#notesIcon");
@@ -109,3 +111,7 @@ notesIcon.addEventListener("click", function() {
   openWindow(notesWindow);
 });
 
+function handleWindowTap(element) {
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+}
