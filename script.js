@@ -1,30 +1,10 @@
 var windows = document.querySelectorAll(".window");
 var closeButtons = document.querySelectorAll(".close-box");
-var selectedIcon = undefined
 
 function updateTime() {
   var currentTime = new Date().toLocaleString();
   var timeText = document.querySelector("#timeElement");
   timeText.innerHTML = currentTime;
-}
-
-function SelectIcon(element) {
-  element.classList.add("selected");
-  selectedIcon = element
-} 
-
-function DeselectIcon(element) {
-  element.classList.remove("selected");
-  selectedIcon = element
-} 
-
-function handleIconTap(element) {
-  if (element.classList.contains("selected")) {
-    deselectIcon(element)
-    openWindow(window)
-  } else {
-    selectIcon(element)
-  }
 }
 
 setInterval(updateTime, 1000);
