@@ -12,7 +12,7 @@ setInterval(updateTime, 1000);
 updateTime();
 
 
-// Make every window draggable
+// Make every window draggable ( i codded this because every windows of my code is draggable )
 windows.forEach(function(windowElement) {
   dragElement(windowElement);
 });
@@ -73,7 +73,7 @@ function dragElement(element) {
 }
 
 
-// Close every window when its Close button is clicked
+// Close current button ( i found this so i dont have to assign closing for every window i crete )
 closeButtons.forEach(function(button) {
   button.addEventListener("click", function(e) {
     e.stopPropagation();
@@ -105,8 +105,15 @@ function deselectIcon(element) {
 function handleIconTap(element) {
   if (element.classList.contains("selected")) {
     deselectIcon(element)
-    openWindow(window)
+    openWindow(document.querySelector("#note"))
   } else {
     selectIcon(element)
   }
 }
+
+var notesIcon = document.querySelector("#notesIcon");
+
+notesIcon.addEventListener("click", function() {
+    handleIconTap(notesIcon);
+});
+
