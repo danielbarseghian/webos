@@ -1,5 +1,6 @@
 var windows = document.querySelectorAll(".window");
 var closeButtons = document.querySelectorAll(".close-box");
+var selectedIcon = undefined
 
 function updateTime() {
   var currentTime = new Date().toLocaleString();
@@ -76,4 +77,27 @@ closeButtons.forEach(function(button) {
 
 function closeWindow(element) {
   element.style.display = "none";
+}
+
+function openWindow(element) {
+  element.style.display = "block";
+}
+
+function selectIcon(element) {
+  element.classList.add("selected");
+  selectedIcon = element
+} 
+
+function deselectIcon(element) {
+  element.classList.remove("selected");
+  selectedIcon = undefined
+}
+
+function handleIconTap(element) {
+  if (element.classList.contains("selected")) {
+    deselectIcon(element)
+    openWindow(window)
+  } else {
+    selectIcon(element)
+  }
 }
