@@ -14,10 +14,20 @@ body {
     height: 250px;
 }
 
-#desktopApps {
-    top: 50%;
+#anecdoteheader {
+    width: 100%;
+    box-sizing: border-box;
 }
 
+#introheader {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#noteheader {
+    width: 100%;
+    box-sizing: border-box;
+}
 .box {
     position: absolute;
     padding: 12px;
