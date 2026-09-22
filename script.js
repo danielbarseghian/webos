@@ -152,6 +152,16 @@ var content = [
     title: "Second Sigma node",
     date: "22/09/20026",
     content: `<p>boom boom</p>`
+  },
+  {
+    title: "Impossible",
+    date: "69/420/20026",
+    content: `<p>get a girlfriend</p>`
+  },
+  {
+    title: "learn rust",
+    date: "09/08/20026",
+    content: `<p>finish rustlings</p>`
   }
 ]
 
