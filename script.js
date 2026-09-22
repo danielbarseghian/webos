@@ -142,3 +142,44 @@ addWindowTapHandling(anecdoteScreen);
 addWindowTapHandling(introScreen);
 addWindowTapHandling(notesScreen);
 
+var content = [
+  {
+    title: "Welcome",
+    date: "06/28/2023",
+    content: `<p>Welcome to my notes app!</p>`
+  },
+  {
+    title: "Second Sigma node",
+    date: "22/09/20026",
+    content: `<p>boom boom</p>`
+  }
+]
+
+function setNotesContent(index) {
+
+  var notesContent = document.querySelector("#notesContent")
+
+  notesContent.innerHTML = content[index].content
+}
+
+setNotesContent(0)
+
+function addToSideBar(index) {
+  var sidebar = document.querySelector("#sidebar");
+  var note = content[index];
+  var newDiv = document.createElement("div");
+  newDiv.innerHTML = `
+    <p style="margin: 0px;">${note.title}</p>
+    <p style="font-size: 12px; margin: 0px;">${note.date}</p>
+  `;
+  newDiv.addEventListener("click", function() {
+    setNotesContent(index);
+  });
+  sidebar.appendChild(newDiv);
+}
+
+for (let i = 0; i < content.length; i++) {
+  addToSideBar(i);
+}
+
+

@@ -35,12 +35,20 @@ body {
 }
 
 .close-box {
-  border: 2px solid #cc0101;
-  background-color: #cc0101;
-  border-radius: 25px;
-  line-height: 1;
-  display: inline-block;
-  padding: 2px 6px;
+    border: 2px solid #cc0101;
+    background-color: #cc0101;
+    border-radius: 25px;
+    line-height: 1;
+    display: inline-block;
+    padding: 2px 6px;
+    align-self: flex-start;
+}
+
+#noteheader {
+    width: 50%;
+    align-self: center;
+    box-sizing: border-box;
+
 }
 
 
