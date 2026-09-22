@@ -11,12 +11,9 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
-
-// Make every window draggable ( i codded this because every windows of my code is draggable )
 windows.forEach(function(windowElement) {
   dragElement(windowElement);
 });
-
 
 function dragElement(element) {
   var initialX = 0;
@@ -88,10 +85,6 @@ function closeWindow(element) {
   element.style.display = "none";
 }
 
-function openWindow(element) {
-  element.style.display = "block";
-}
-
 function selectIcon(element) {
   element.classList.add("selected");
   selectedIcon = element
@@ -116,4 +109,36 @@ var notesIcon = document.querySelector("#notesIcon");
 notesIcon.addEventListener("click", function() {
     handleIconTap(notesIcon);
 });
+
+var biggestIndex = 1;
+
+function addWindowTapHandling(element) {
+  element.addEventListener("mousedown", () =>
+    handleWindowTap(element)
+  )
+}
+
+var topBar = document.querySelector("#top")
+
+function openWindow(element) {
+  element.style.display = "flex";
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+}
+
+function handleWindowTap(element) {
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+  deselectIcon(selectedIcon)
+}
+
+var introScreen = document.querySelector("#intro");
+var notesScreen = document.querySelector("#note");
+var anecdoteScreen = document.querySelector("#anecdote");
+
+addWindowTapHandling(anecdoteScreen);
+addWindowTapHandling(introScreen);
+addWindowTapHandling(notesScreen);
 
