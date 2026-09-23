@@ -66,18 +66,29 @@
                 <p class="close-box" style="cursor: pointer">Close</p>
             </div>
 
-            <div id="identity" class="box liquid-glass window" style=" display: none">
-                <div id="identityheader" class="liquid-glass" style="padding: 3px; border-radius: 15px; background-color: rgba(0, 0, 0, 0.25);">
+            <div id="identity" class="box liquid-glass window" style="display: none ">
+                <div id="identityheader" class="liquid-glass" style="justify-content: center; padding: 3px; border-radius: 15px; background-color: rgba(0, 0, 0, 0.25);">
                     <center><h2>Identity</h2></center>
                 </div>
-                <p>
-                    Hello you (and not world)
-                </p>
+                <br>
+
+                <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 16px; width: 100%; box-sizing: border-box;">
+                    <img id="dog" src="./static/dog-rose.jpeg" style="border-radius: 25px; width: 220px; height: 220px; padding: 10px; flex-shrink: 0;">
+                    <p style="max-width: 300px; color: #1a1a1a; font-size: 15px; line-height: 1.65; letter-spacing: 0.2px;">
+                        Hello you (and not world),  I'm Daniel. I love programming, and you can find my work on 
+                        <a href="https://github.com/danielbarseghian/" target="_blank" class="identity-link">GitHub</a>. 
+                        I'm currently learning Rust through rustlings, though C is still my favorite language. 
+                        The project I'm most proud of is my 
+                        <a href="https://github.com/danielbarseghian/file-compressor" target="_blank" class="identity-link">file compressor</a>. 
+                        I won a 3D printer at Stardance, and I run Debian on my machines.
+                    </p>
+                </div>
+
                 <p class="close-box" style="cursor: pointer">Close</p>
             </div>
 
             <!-- I liked the ubuntu style bar -->
-            <div id="desktopApps" class="box liquid-glass" style="top: 30%; height: 35%;">
+            <div id="desktopApps" class="box liquid-glass" style="top: 35%; height: 25%;">
                 <div id="notesIcon" style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content">
                     <img src="./static/note.png" style="width: 64px; height: 64px; border-radius: 16px;">
                     <p style="margin: 0px; color: #fff; ">Notes</p>
