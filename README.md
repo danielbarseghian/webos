@@ -1,7 +1,7 @@
 # webos
 this is my own webOS called seaOS at first i wasn't really having fun but at the end i really started to enjoy it, and finished it in one day, if you dont like what you do you wont be doing it right, thats what i learned from this!
 
-![WebOS image](image.png)
+<img width="1917" height="953" alt="image" src="https://github.com/user-attachments/assets/1c43135f-5b23-4f5e-9a95-3c575006c13a" />
 
 # How to run locally
 1. Clone the repo
