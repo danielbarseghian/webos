@@ -1,5 +1,3 @@
-var windows = document.querySelectorAll(".window");
-var closeButtons = document.querySelectorAll(".close-box");
 var selectedIcon = undefined
 
 function updateTime() {
@@ -9,11 +7,7 @@ function updateTime() {
 }
 
 setInterval(updateTime, 1000);
-updateTime();
-
-windows.forEach(function(windowElement) {
-  dragElement(windowElement);
-});
+updateTime()
 
 function dragElement(element) {
   var initialX = 0;
@@ -70,17 +64,6 @@ function dragElement(element) {
 }
 
 
-// Close current button ( i found this so i dont have to assign closing for every window i crete )
-closeButtons.forEach(function(button) {
-  button.addEventListener("click", function(e) {
-    e.stopPropagation();
-
-    var windowElement = button.closest(".window");
-    closeWindow(windowElement);
-  });
-});
-
-
 function closeWindow(element) {
   element.style.display = "none";
 }
@@ -134,13 +117,21 @@ function handleWindowTap(element) {
   deselectIcon(selectedIcon)
 }
 
-var introScreen = document.querySelector("#intro");
-var notesScreen = document.querySelector("#note");
-var anecdoteScreen = document.querySelector("#anecdote");
+function initializeWindow(elementName) {
+  var screen = document.querySelector("#" + elementName)
+  addWindowTapHandling(screen)
+  makeClosable(elementName)
+  dragElement(screen)
 
-addWindowTapHandling(anecdoteScreen);
-addWindowTapHandling(introScreen);
-addWindowTapHandling(notesScreen);
+  if(elementName != "welcome") {
+    initializeIcon(elementName)  
+  }
+}
+
+initializeWindow("welcome");
+initializeWindow("notes");
+initializeWindow("intro");
+initializeWindow("anecdote");
 
 var content = [
   {
