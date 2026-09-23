@@ -87,13 +87,14 @@ function handleIconTap(element) {
   }
 }
 
-var notesIcon = document.querySelector("#notesIcon");
-
-notesIcon.addEventListener("click", function() {
-    handleIconTap(notesIcon);
-});
-
 var biggestIndex = 1;
+
+function handleWindowTap(element) {
+  biggestIndex++;
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+  if (selectedIcon) deselectIcon(selectedIcon);
+}
 
 function addWindowTapHandling(element) {
   element.addEventListener("mousedown", () =>
@@ -110,12 +111,32 @@ function openWindow(element) {
   topBar.style.zIndex = biggestIndex + 1;
 }
 
-function handleWindowTap(element) {
-  biggestIndex++;  // Increment biggestIndex by 1
-  element.style.zIndex = biggestIndex;
-  topBar.style.zIndex = biggestIndex + 1;
-  deselectIcon(selectedIcon)
+function handleIconTap(icon, screen) {
+  if (icon.classList.contains("selected")) {
+    deselectIcon(icon)
+    openWindow(screen)
+  } else {
+    selectIcon(icon)
+  }
 }
+
+function makeClosable(elementName) {
+  var win = document.querySelector("#" + elementName);
+  var closeBtn = win.querySelector(".close-box");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function () {
+      closeWindow(win);
+    });
+  }
+}
+
+function initializeIcon(elementName) {
+  var icon = document.querySelector("#" + elementName + "Icon");
+  var screen = document.querySelector("#" + elementName);
+  if (!icon) return; // not every window has an icon (intro, anecdote)
+  icon.addEventListener("click", () => handleIconTap(icon, screen));
+}
+
 
 function initializeWindow(elementName) {
   var screen = document.querySelector("#" + elementName)
@@ -128,7 +149,6 @@ function initializeWindow(elementName) {
   }
 }
 
-initializeWindow("welcome");
 initializeWindow("notes");
 initializeWindow("intro");
 initializeWindow("anecdote");
