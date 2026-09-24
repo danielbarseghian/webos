@@ -3,6 +3,10 @@ this is my own webOS called seaOS at first i wasn't really having fun but at the
 
 <img width="1917" height="953" alt="image" src="https://github.com/user-attachments/assets/1c43135f-5b23-4f5e-9a95-3c575006c13a" />
 
+# REVIEWERS PLEASE READ
+This was tested in linux and windows in firefox and google chrome, both work flawlessly, i dont have a mac so i cant test it.
+I added a new feature called quotes every day it randomly picks a quote a quote in the list and it displays it!
+
 # How to run locally
 1. Clone the repo
 ```bash
