@@ -153,7 +153,7 @@ initializeWindow("notes");
 initializeWindow("intro");
 initializeWindow("anecdote");
 initializeWindow("identity");
-intilalizeWindow("quote");
+initializeWindow("quote");
 
 var content = [
   {
@@ -204,5 +204,32 @@ function addToSideBar(index) {
 for (let i = 0; i < content.length; i++) {
   addToSideBar(i);
 }
+
+// AI search this for me
+var quotes = [
+  "Talk is cheap. Show me the code. Linus Torvalds",
+  "Premature optimization is the root of all evil. Donald Knuth",
+  "Simplicity is prerequisite for reliability. Edsger Dijkstra",
+  "The best error message is the one that never shows up. Thomas Fuchs",
+  "First, solve the problem. Then, write the code. John Johnson",
+  "Programs must be written for people to read. Harold Abelson",
+  "Code is like humor. When you have to explain it, it's bad. Cory House",
+  "Debugging is twice as hard as writing the code. Brian Kernighan"
+]
+
+function setQuoteOfTheDay() {
+  // select randomly with the date
+  var today = new Date();
+  var start = new Date(today.getFullYear(), 0, 0);
+  var diff = today - start;
+  var dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  var index = dayOfYear % quotes.length;
+
+  var quotesContent = document.querySelector("#quotesContent");
+  quotesContent.innerHTML = `<p style="margin: 0; font-style: italic;">"${quotes[index]}"</p>`;
+}
+
+setQuoteOfTheDay();
 
 
