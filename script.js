@@ -152,7 +152,8 @@ function initializeWindow(elementName) {
 initializeWindow("notes");
 initializeWindow("intro");
 initializeWindow("anecdote");
-initializeWindow("identity")
+initializeWindow("identity");
+intilalizeWindow("quote");
 
 var content = [
   {
