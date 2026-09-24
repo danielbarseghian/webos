@@ -30,6 +30,15 @@ body {
     box-sizing: border-box;
 }
 
+#desktopApps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    height: auto;
+    min-height: fit-content;
+}
+
 .window {
     flex-direction: column;
 }
